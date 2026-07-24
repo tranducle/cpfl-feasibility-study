@@ -19,6 +19,7 @@
 
 # Manuscript source (not part of replication package)
 *.tex
+!code/*.tex
 *.bib
 
 # OS files
