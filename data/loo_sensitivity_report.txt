@@ -1,0 +1,25 @@
+========================================================================
+LEAVE-ONE-OUT OUTLIER-SENSITIVITY ANALYSIS  --  SCIE Q1 robustness check #3
+========================================================================
+Run: 2026-07-24
+Input: data/cfpb_construct_validity.csv   Output: data/loo_sensitivity.csv
+
+Per-firm within-firm pre/post log-difference (CFPB complaint counts):
+Firm             d_f  n_pre  n_post  usable
+--------------------------------------------------
+MrCooper     +0.2289      8       8  True
+loanDepot    +0.0280      8      10  True
+Navient          nan     18       0  False
+
+Estimable firms in pool: ['MrCooper', 'loanDepot']  (N=2)
+Full-pool equal-weight mean d = +0.1285  (across-firm SD = 0.1420)
+
+SENSITIVITY VERDICT
+------------------------------------------------------------------------
+DEGENERATE: only 2 estimable firm(s). Every LOO cell collapses to N=1.
+The panel is too small for the conclusion to be robust to single-firm removal.
+Pooled sign stable across LOO cells, but with N<=2 this is mechanical, not robustness.
+
+Combined with the placebo test and the construct-validity finding, this LOO result is
+consistent with the BOUND verdict: report CFPB-based findings as bounded directional /
+feasibility-grade evidence, never as a robust point estimate.

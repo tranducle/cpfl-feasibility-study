@@ -1,0 +1,43 @@
+========================================================================
+LONGITUDINAL PLACEBO (PSEUDO-EVENT) TEST  --  SCIE Q1 robustness check #2
+========================================================================
+Run: 2026-07-24
+Design: within-firm pre/post log-difference in CFPB complaint counts,
+        compared at the TRUE event anchor vs a PLACEBO anchor shifted -1y (-2q secondary).
+Input: data/cfpb_construct_validity.csv
+
+Data scope: financial sub-panel only (Mr. Cooper, loanDepot, Navient).
+Mr. Cooper right-censored at 2025Q4. Navient real event 2026-06-08 has only a partial 2026Q2 post-quarter.
+
+------------------------------------------------------------------------
+Firm      Anchor         pre_n post_n      dlognote                    
+------------------------------------------------------------------------
+MrCooper  TRUE               8      8   +0.2289censored 2025Q4         
+          2022-11-01 (-1y)     4     12   +0.2122placebo                 
+          2023-05-01 (-2q)     6     10   +0.2763placebo (secondary)     
+------------------------------------------------------------------------
+loanDepot TRUE               8     10   +0.0280                        
+          2023-01-01 (-1y)     4     14   -0.0915placebo                 
+          2023-07-01 (-2q)     6     12   -0.0203placebo (secondary)     
+------------------------------------------------------------------------
+Navient   TRUE              18      0       nanpost~0 (recency)        
+          2025-06-01 (-1y)    14      4   -1.0354placebo                 
+          2025-12-01 (-2q)    16      2   -0.8289placebo (secondary)     
+------------------------------------------------------------------------
+
+PLACEBO VERDICT (per firm) -- conservative: binding = larger-magnitude placebo
+------------------------------------------------------------------------
+MrCooper: true dlog=+0.2289 | placebo(-1y)=+0.2122, (-2q)=+0.2763 | placebo_max=0.2763 -> FAIL
+         A no-hack date produces a shift >= the true-event shift; date-invariant
+         trend/operational variance dominates; event-specificity not isolated.
+loanDepot: true dlog=+0.0280 | placebo(-1y)=-0.0915, (-2q)=-0.0203 -> NULL
+         True-event log-shift negligible (<0.05): no measurable event reaction.
+Navient: NOT INTERPRETABLE -- true-event post-window has 0 quarter(s).
+         Navient event (2026-06-08) too recent; placebo cannot adjudicate parallel trends.
+------------------------------------------------------------------------
+
+INTERPRETATION: a post-event shift NOT clearly larger than the placebo shift
+indicates the CFPB series carries substantial non-event variance. Consistent with
+the construct-validity finding (general-dissatisfaction proxy). Bounds -- but does
+not overturn -- within-firm event-time use, provided effects are reported as bounded
+directional evidence, not point estimates.

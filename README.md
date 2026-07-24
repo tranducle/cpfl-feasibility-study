@@ -58,17 +58,24 @@ cpfl-feasibility-study/
 │
 ├── data/
 │   ├── cfpb_firm_quarter_counts.csv      ← 18-quarter aggregate complaints (2 firms)
+│   ├── cfpb_construct_validity.csv       ← issue-faceted complaints: total vs security-related (3 firms) [NEW]
 │   ├── tenq_customer_disclosure.csv      ← 77 filing-level disclosure scores (6 firms)
 │   ├── policy_coded_pairs.csv            ← 20 coded snapshot-pair composites (4 firms)
 │   ├── wayback_snapshot_matrix.csv       ← Internet Archive capture availability
 │   ├── mde_inputs_computed.json          ← MDE/power planning inputs
+│   ├── placebo_test_results.txt          ← longitudinal placebo (pseudo-event) results [NEW]
+│   ├── loo_sensitivity.csv               ← leave-one-out outlier sensitivity [NEW]
+│   ├── loo_sensitivity_report.txt        ← leave-one-out findings report [NEW]
 │   └── policy_raw/                       ← 42 raw archived privacy-page snapshots
 │       ├── *.txt                         ← playback text content
 │       ├── cdx_*.json                    ← CDX API metadata per firm
 │       └── pair_briefs_clean.json        ← cleaned pair-level briefs
 │
 ├── code/
-│   └── generate_figures.py               ← reproducible figure generation (matplotlib)
+│   ├── generate_figures.py               ← reproducible figure generation (matplotlib)
+│   ├── cfpb_construct_validity_extractor.py  ← construct-validity CFPB extraction (size=0) [NEW]
+│   ├── placebo_test.py                  ← longitudinal placebo (pseudo-event) check [NEW]
+│   └── leave_one_out_analysis.py         ← leave-one-out outlier sensitivity [NEW]
 │
 └── docs/
     ├── data_dictionary.md                ← variable definitions, units, sources
@@ -76,7 +83,8 @@ cpfl-feasibility-study/
     ├── entity_crosswalk.md               ← SEC CIK → brand → operating unit mapping
     ├── policy_diff_codebook.md           ← six-dimensional coding rule definitions
     ├── evidence_gate_verdict.md          ← terminal BOUND gate verdict
-    └── figure_provenance.md              ← figure-to-data traceability
+    ├── figure_provenance.md              ← figure-to-data traceability
+    └── cfpb_construct_validity.md        ← construct-validity findings report [NEW]
 ```
 
 ---
@@ -98,6 +106,37 @@ publication-quality vector figures:
 
 No trend lines, confidence intervals, regression, or estimation are
 applied. All figures are descriptive/feasibility-grade.
+
+---
+
+## Robustness Diagnostics (CFPB Customer Indicator)
+
+Although the primary policy-outcome coefficient is **not** estimated (the
+feasibility gate fails at the estimand level), the CFPB customer-behavior
+proxy itself can be stress-tested. Three pre-registered robustness checks
+are provided for the financial-servicer subset (Mr. Cooper, loanDepot,
+Navient); the remaining pilot firms are outside CFPB jurisdiction. These
+characterize the **proxy**, not the estimand — they produce no
+coefficient and reinforce the BOUND verdict.
+
+```bash
+# Requires: Python 3.10+, pandas, numpy, requests (extractor only)
+# Pipeline: extractor (live CFPB API) -> placebo + leave-one-out (read the CSV)
+
+python3 code/cfpb_construct_validity_extractor.py   # queries CFPB size=0; writes data/ + docs/
+python3 code/placebo_test.py                        # reads data/cfpb_construct_validity.csv
+python3 code/leave_one_out_analysis.py              # reads data/cfpb_construct_validity.csv
+```
+
+| Check | What it tests | Result |
+|-------|---------------|--------|
+| **Construct validity** (`cfpb_construct_validity_extractor.py`) | Whether complaint counts measure a *security* reaction vs generic service dissatisfaction (issue facet) | Security-related issues are only 2–7% of complaints → CFPB is a **general-dissatisfaction** proxy. loanDepot uniquely shows a post-event security-share rise (5.6% → 13–16%). |
+| **Longitudinal placebo** (`placebo_test.py`) | Whether the proxy isolates an event-specific reaction (true date vs −1y/−2q pseudo-events) | Mr. Cooper **FAIL** (placebo shift ≥ true); loanDepot **NULL** (no measurable reaction); Navient not interpretable (no post-event data). |
+| **Leave-one-out** (`leave_one_out_analysis.py`) | Whether a single firm drives the pooled effect | **Degenerate** — only 2 estimable firms; every LOO cell collapses to N=1. |
+
+All scripts resolve paths relative to the repo root (portable; no
+hardcoded machine paths). CFPB queries use `size=0` exclusively — no
+individual complaint records are ever retrieved.
 
 ---
 

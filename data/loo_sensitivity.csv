@@ -1,0 +1,4 @@
+scenario,firms_included,n_firms,pooled_dlog_mean,pooled_dlog_sd,sign,note
+FULL_POOL,MrCooper;loanDepot,2,0.1285,0.142,+,equal-weight mean of within-firm pre/post log-diffs
+LOO_drop_MrCooper,loanDepot,1,0.028,,+,dropped MrCooper; remaining N=1 (DEGENERATE: LOO collapses to N=1)
+LOO_drop_loanDepot,MrCooper,1,0.2289,,+,dropped loanDepot; remaining N=1 (DEGENERATE: LOO collapses to N=1)

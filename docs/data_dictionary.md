@@ -71,6 +71,16 @@
 | `cfpb_logcount_sd` | float | Computed from `cfpb_firm_quarter_counts.csv` | Mean within-firm CFPB log-count SD ≈ 0.369 |
 | `mde_range` | float | Formula-based | 0.068–0.096 under assumed N_eff = 16–32 |
 
+### Robustness artifacts (CFPB customer-indicator diagnostics)
+
+| Artifact | Path | Check | Description |
+|----------|------|-------|-------------|
+| `cfpb_construct_validity.csv` / `cfpb_construct_validity.md` | `data/` , `docs/` | Construct validity | Per firm-quarter total vs security-related complaint counts and security share; loanDepot canonical name (`LD Holdings Group, LLC`) resolved here |
+| `placebo_test_results.txt` | `data/` | Longitudinal placebo | Within-firm pre/post log-diff at true vs −1y/−2q pseudo-event anchors |
+| `loo_sensitivity.csv` / `loo_sensitivity_report.txt` | `data/` | Leave-one-out | Pooled effect recomputed dropping each firm; degenerate at N=2 estimable firms |
+
+**Scope:** financial sub-panel only (Mr. Cooper, loanDepot, Navient). Healthcare/HSA firms and Cencora are outside CFPB jurisdiction. These are proxy-level diagnostics (no λ coefficient); reproducible via `code/cfpb_construct_validity_extractor.py` → `code/placebo_test.py` → `code/leave_one_out_analysis.py`.
+
 ---
 
 ## Measurement status vocabulary
