@@ -1,0 +1,32 @@
+# Sensitive files — never commit
+.env
+.aimodel
+*.key
+*.pem
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# Manuscript source (not part of replication package)
+*.tex
+*.bib
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

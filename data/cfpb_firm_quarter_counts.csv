@@ -1,0 +1,37 @@
+firm,company_canonical,quarter,complaint_count,date_received_min,date_received_max
+Navient,"Navient Solutions, LLC.",2022Q1,600,2022-01-01,2022-03-31
+Navient,"Navient Solutions, LLC.",2022Q2,529,2022-04-01,2022-06-30
+Navient,"Navient Solutions, LLC.",2022Q3,559,2022-07-01,2022-09-30
+Navient,"Navient Solutions, LLC.",2022Q4,427,2022-10-01,2022-12-31
+Navient,"Navient Solutions, LLC.",2023Q1,339,2023-01-01,2023-03-31
+Navient,"Navient Solutions, LLC.",2023Q2,290,2023-04-01,2023-06-30
+Navient,"Navient Solutions, LLC.",2023Q3,413,2023-07-01,2023-09-30
+Navient,"Navient Solutions, LLC.",2023Q4,334,2023-10-01,2023-12-31
+Navient,"Navient Solutions, LLC.",2024Q1,353,2024-01-01,2024-03-31
+Navient,"Navient Solutions, LLC.",2024Q2,1070,2024-04-01,2024-06-30
+Navient,"Navient Solutions, LLC.",2024Q3,1165,2024-07-01,2024-09-30
+Navient,"Navient Solutions, LLC.",2024Q4,492,2024-10-01,2024-12-31
+Navient,"Navient Solutions, LLC.",2025Q1,550,2025-01-01,2025-03-31
+Navient,"Navient Solutions, LLC.",2025Q2,280,2025-04-01,2025-06-30
+Navient,"Navient Solutions, LLC.",2025Q3,171,2025-07-01,2025-09-30
+Navient,"Navient Solutions, LLC.",2025Q4,148,2025-10-01,2025-12-31
+Navient,"Navient Solutions, LLC.",2026Q1,228,2026-01-01,2026-03-31
+Navient,"Navient Solutions, LLC.",2026Q2,146,2026-04-01,2026-06-30
+MrCooper,Mr. Cooper Group Inc.,2022Q1,578,2022-01-01,2022-03-31
+MrCooper,Mr. Cooper Group Inc.,2022Q2,446,2022-04-01,2022-06-30
+MrCooper,Mr. Cooper Group Inc.,2022Q3,496,2022-07-01,2022-09-30
+MrCooper,Mr. Cooper Group Inc.,2022Q4,403,2022-10-01,2022-12-31
+MrCooper,Mr. Cooper Group Inc.,2023Q1,496,2023-01-01,2023-03-31
+MrCooper,Mr. Cooper Group Inc.,2023Q2,422,2023-04-01,2023-06-30
+MrCooper,Mr. Cooper Group Inc.,2023Q3,523,2023-07-01,2023-09-30
+MrCooper,Mr. Cooper Group Inc.,2023Q4,673,2023-10-01,2023-12-31
+MrCooper,Mr. Cooper Group Inc.,2024Q1,691,2024-01-01,2024-03-31
+MrCooper,Mr. Cooper Group Inc.,2024Q2,587,2024-04-01,2024-06-30
+MrCooper,Mr. Cooper Group Inc.,2024Q3,544,2024-07-01,2024-09-30
+MrCooper,Mr. Cooper Group Inc.,2024Q4,588,2024-10-01,2024-12-31
+MrCooper,Mr. Cooper Group Inc.,2025Q1,672,2025-01-01,2025-03-31
+MrCooper,Mr. Cooper Group Inc.,2025Q2,684,2025-04-01,2025-06-30
+MrCooper,Mr. Cooper Group Inc.,2025Q3,580,2025-07-01,2025-09-30
+MrCooper,Mr. Cooper Group Inc.,2025Q4,685,2025-10-01,2025-12-31
+MrCooper,Mr. Cooper Group Inc.,2026Q1,541,2026-01-01,2026-03-31
+MrCooper,Mr. Cooper Group Inc.,2026Q2,0,2026-04-01,2026-06-30

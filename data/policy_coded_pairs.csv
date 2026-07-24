@@ -1,0 +1,21 @@
+pair_id,firm,ymA,ymB,window,RET,NOT,SEC,SHR,ACC,SCOPE,postwin,direction,event_ref,composite_A,sim,n_genuine,key_change
+1,UnitedHealth,202311,202312,pre,0,0,0,0,0,1,0,0,0,0.0,0.989,2,the board trustees of the ||| 997: the board trustees of the
+2,UnitedHealth,202401,202402,boundary,0,0,0,0,0,0,0,0,0,0.0,1.0,0,
+3,UnitedHealth,202402,202403,post,0,1,0,0,0,1,1,1,0,0.067,0.986,2,provider notice of privacy practices - optum housecalls ||| aviso de prácticas d
+4,UnitedHealth,202406,202407,post,0,0,0,0,0,0,1,0,0,0.0,0.983,0,
+5,UnitedHealth,202411,202412,post,0,0,0,0,0,0,1,0,0,0.0,0.992,0,
+6,UnitedHealth,202412,202501,post,0,0,0,0,0,0,1,0,0,0.0,0.992,0,
+7,HealthEquity,202303,202304,pre,0,0,0,0,0,1,0,0,0,0.0,0.796,1,"let's hsa! first, tell us who you are: i'm not signing up through an employer or"
+8,HealthEquity,202405,202406,pre,0,0,0,0,0,0,0,0,0,0.0,0.99,0,
+9,HealthEquity,202406,202409,boundary,0,0,0,0,0,1,1,0,0,0.0,0.975,3,save page now outlinks ||| hpa | health payment account ||| hpa | health payment
+10,HealthEquity,202506,202507,post,0,0,0,0,0,0,1,0,0,0.0,0.995,0,
+11,HealthEquity,202507,202508,post,0,0,1,0,0,2,1,1,0,0.067,0.968,3,"biometric data policy ||| biometric data policy ||| let's hsa! first, tell us wh"
+12,HealthEquity,202508,202512,post,0,0,0,0,0,1,1,0,0,0.0,0.963,1,save page now outlinks
+13,loanDepot,202305,202310,pre,1,0,0,1,0,2,0,1,0,0.133,0.761,8,"former customer, job applicant, ||| loandepot and its parent, subsidiary, and af"
+14,loanDepot,202310,202312,pre,0,0,0,0,0,0,0,0,0,0.0,1.0,0,
+15,loanDepot,202312,202402,boundary,0,0,0,0,0,0,1,0,0,0.0,1.0,0,
+16,loanDepot,202404,202405,post,0,0,0,0,0,0,1,0,0,0.0,1.0,0,
+17,loanDepot,202412,202501,post,0,0,0,0,0,0,1,0,0,0.0,1.0,0,
+18,MrCooper,202306,202307,pre,0,0,0,0,0,0,0,0,0,0.0,0.999,0,
+19,MrCooper,202310,202311,boundary,0,0,0,0,0,0,1,0,0,0.0,0.969,0,
+20,MrCooper,202311,202406,post,0,0,0,2,1,2,1,1,0,0.2,0.957,3,text messaging opt-in consent will not be shared with or transferred to third pa

@@ -1,0 +1,9 @@
+{
+ "sig_e_deltapolicy": 0.0504,
+ "sig_x_cfpb_log_mean": 0.3693,
+ "N_pairs": 20,
+ "n_firms": 4,
+ "pairs_nonzero": 4,
+ "composite_mean": 0.0234,
+ "composite_sd": 0.0528
+}
