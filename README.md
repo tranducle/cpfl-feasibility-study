@@ -73,6 +73,7 @@ cpfl-feasibility-study/
 │
 ├── code/
 │   ├── generate_figures.py               ← reproducible figure generation (matplotlib)
+│   ├── fig_gate_matrix.tex               ← feasibility-gate matrix figure (TikZ standalone) [NEW]
 │   ├── cfpb_construct_validity_extractor.py  ← construct-validity CFPB extraction (size=0) [NEW]
 │   ├── placebo_test.py                  ← longitudinal placebo (pseudo-event) check [NEW]
 │   └── leave_one_out_analysis.py         ← leave-one-out outlier sensitivity [NEW]
